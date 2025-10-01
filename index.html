@@ -125,7 +125,7 @@
                   </a>
                 </span> -->
                 <span class="link-block">
-                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2509.25390" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -159,6 +159,20 @@
     </div>
   </section>
 
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/overview_example.png" alt="geometric reasoning" width="99%" />
+        <p> Overview of SPINBENCH task design across seven task groups. Representative subtasks
+          are illustrated for each group with simplified question wording for clarity. In the released benchmark,
+          all queries include explicit frame-of-reference definitions to avoid ambiguity. Human face data are sourced
+          from the <a href="https://www.epfl.ch/labs/cvlab/data/data-stereoface/">Stereo Face Database</a> and are
+          licensed for research use only.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
@@ -173,6 +187,7 @@
       </div>
     </div>
   </section>
+  
 
 
   <section class="hero is-light is-small">
@@ -247,7 +262,7 @@
               Results reveal systematic weaknesses: strong egocentric bias, poor rotational understanding, and
               inconsistencies under symmetrical and syntactic reformulations.
               Scaling analysis shows both smooth improvements and emergent capabilities.
-              While human subjects achieve high accuracy (91.2\%), task difficulty as measured by human response time
+              While human subjects achieve high accuracy (91.2%), task difficulty as measured by human response time
               shows strong correlation with VLM accuracy, indicating that SpinBench captures spatial reasoning
               challenges shared across humans and VLMs.
               Together, our findings highlight the need for structured, cognitively inspired diagnostic tools to advance
@@ -274,44 +289,157 @@
   </section>
 
 
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code></code></pre>
-    </div>
-  </section>
-
-
-  <!-- <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
+  <section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Evaluations on 37 VLMs
+          </h2>
+          <img src="static/images/vlm_benchmark_cohens_kappa_heatmap_bottom_v2.png" alt="eval-heatmap"
+            style="max-width: 80%;" />
+          <div class="content has-text-justified">
             <p>
-              This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-            <p>
-              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
-                code</a> of this website,
-              we just ask that you link back to this page in the footer.
-              Please remember to remove the analytics code included in the header of the website which
-              you do not want on your website.
+              In the figure below, Cohen's kappa values (κ) measure chance-adjusted performance, where κ=0 indicates
+              chance-level and κ=1 perfect accuracy. Results is shown across 23 grouped task variants under 7 spatial
+              reasoning categories.
             </p>
           </div>
         </div>
       </div>
     </div>
-  </footer> -->
+  </section>
+
+  <section class="section">
+    <!-- Inconsistencies in logically equivalent spatial queries. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Inconsistencies in logically equivalent spatial queries</h3>
+        <img src="static/images/accuracy_consistency_analysis.png" alt="consistency_analysis" style="max-width: 80%;" />
+        <div class="content has-text-justified">
+          <p>
+            Many models are inconsistent in logically equivalent spatial tasks. While InternVL3-38B achieves 95.7%
+            consistency, many fall below 30%. A strong correlation (r = 0.874, p < 0.05) between accuracy and
+              consistency. </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Inconsistencies in logically equivalent spatial queries. -->
+  </section>
+
+  <section class="section">
+    <!-- Biased perspective. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Biased perspective</h3>
+        <div class="content has-text-justified">
+          <p>
+            Models show a strong egocentric bias in dynamic rotation tasks, even when asked to adopt other viewpoints.
+            Top performers on egocentric tasks do poorly on allocentric ones, likely due to training data favoring
+            first-person views.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Biased perspective. -->
+  </section>
+
+
+  <section class="section">
+    <!-- Scaling laws and emergent capability -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Scaling laws and emergent capability</h3>
+        <img src="static/images/scaling_laws_benchmark.png" alt="human_analysis" style="max-width: 90%;" />
+        <div class="content has-text-justified">
+          <p>
+            Performance improves with model size but varies by task. Object relation grounding improves gradually, while
+            identity matching shows a sharp jump once models exceed 7B parameters. These trends reflect emergent
+            abilities and reveal gaps between small and large models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Scaling laws and emergent capability -->
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <!-- Visual failures or linguistic failures. -->
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-4">Visual failures or linguistic failures</h2>
+            <img src="static/images/linguistic_spatial_reasoning_analysis.png" alt="linguistic_analysis"
+              style="max-width: 95%;" />
+            <p>
+              Perspective-taking tasks test spatial reasoning across viewpoints. Even when spatial relations are clearly
+              described (with information abstracted in the premise, no visual input needed), many models fail, showing
+              that reasoning errors persist even in purely
+              linguistic tasks. Top performing models perform also perform well on linguistic tasks.
+            </p>
+          </div>
+        </div>
+        <!--/ Visual failures or linguistic failures. -->
+
+        <!-- Human response time -->
+        <div class="column">
+          <h2 class="title is-4">Human response time and VLM accuracy correlation</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <img src="static/images/vlm_human_correlation_subtype_wo_errorbar.png" alt="human_analysis"
+                style="max-width: 95%;" />
+              <p>
+                We conducted human evaluation with twelve subjects to establish performance baselines and validate task
+                difficulty.
+                Tasks taking longer for humans also result in lower VLM accuracy, showing a correlation (r = –0.54, p <
+                  0.05). SpinBench captures captures spatial reasoning challenges shared across humans and VLMs, as a
+                  diagnostic tool.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Human response time -->
+    </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{zhang2025spinbenchperspectiverotationlens,
+      title={SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs}, 
+      author={Yuyou Zhang and Radu Corcodel and Chiori Hori and Anoop Cherian and Ding Zhao},
+      year={2025},
+      eprint={2509.25390},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2509.25390}, 
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a
+              href="https://mathvista.github.io/">MathVista</a> licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </footer>
 
 </body>
 
